@@ -1,8 +1,14 @@
-import Wrapper from './input/wrapper';
-import inputReducer from './input/input.reducer';
+import Wrapper from './wrapper/wrapper.container';
+import wrapperReducer from './wrapper/wrapper.reducer';
+import child1Reducer from './child1/child1.reducer';
+import child2Reducer from './child2/child2.reducer';
 
 export default Wrapper;
 
 export const allReducers={
-    inputReducer
+    wrapperReducer,
+    child1Reducer,
+    child2Reducer
 }
+
+export {Parent} ;

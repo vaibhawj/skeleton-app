@@ -10,6 +10,6 @@ import { allReducers } from '../index';
 
 const store = createStore(combineReducers({ ...allReducers }), applyMiddleware(thunk));
 
-storiesOf('Input', module)
+storiesOf('Siblings', module)
   .addDecorator(story => <Provider store={store}>{story()}</Provider>)
-  .add('with redux', () => <Wrapper num="1234567890" />);
+  .add('with redux', () => <Wrapper />);
