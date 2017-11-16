@@ -1,9 +1,10 @@
 import {createReducer} from 'redux-act';
+import {increment} from './child1.container';
 
-const initState = {
+const initialState = {
     num: 0
 }
-import {increment} from './child1.container';
+
 const child1Reducer = createReducer({
     [increment]: (state) => {
         const num = state.num + 1;
@@ -12,8 +13,6 @@ const child1Reducer = createReducer({
             num
         }
     }
-}, {
-    num: 0
-})
+}, initialState)
 
 export default child1Reducer;
