@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         handleClick: () => {
-            dispatch(increment())
+            dispatch(increment('child2'))
         }
     }
 }
