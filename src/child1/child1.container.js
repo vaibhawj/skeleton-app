@@ -2,9 +2,7 @@ import {connect} from 'react-redux';
 import { createAction } from 'redux-act';
 import DumbComponent from './child1.component';
 
-export const increment = createAction('inc', (incrementer) => {
-    return ({incrementer})
-});
+export const increment = createAction('inc', (incrementer) => ({incrementer}));
 
 const mapStateToProps = (state) => {
     return {
