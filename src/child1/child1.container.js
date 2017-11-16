@@ -1,14 +1,13 @@
 import {connect} from 'react-redux';
+import { createAction } from 'redux-act';
 import DumbComponent from './child1.component';
+
+export const increment = createAction('INCREMENT');
 
 const mapStateToProps = (state) => {
     return {
         num: state.child1Reducer.num
     }
-}
-
-export const increment = () => dispatch => {
-    dispatch({type:'INCREMENT'})
 }
 
 const mapDispatchToProps = (dispatch) => {

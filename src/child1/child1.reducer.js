@@ -1,16 +1,19 @@
+import {createReducer} from 'redux-act';
 
 const initState = {
     num: 0
 }
-
-const child1Reducer = (state = initState, action) => {
-    switch (action.type) {
-        case 'INCREMENT':
-            const num = state.num + 1;
-            return { ...state, num }
+import {increment} from './child1.container';
+const child1Reducer = createReducer({
+    [increment]: (state) => {
+        const num = state.num + 1;
+        return {
+            ...state,
+            num
+        }
     }
-
-    return state;
-}
+}, {
+    num: 0
+})
 
 export default child1Reducer;

@@ -1,7 +1,7 @@
+import { createReducer } from 'redux-act';
 
+const child2Reducer = createReducer({
 
-const child2Reducer = (state={}, action) => {
-    return state;
-}
+}, {})
 
 export default child2Reducer;
