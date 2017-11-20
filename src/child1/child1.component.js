@@ -3,7 +3,9 @@ import React from 'react';
 const Child1 = ({num, incrementer, handleClick}) => {
     return (
         <div>
-            Child1: {num} incremented by {incrementer}
+            incremented by {incrementer}
+            <br/>
+            Child1: {num}
             <br/>
             <button onClick={handleClick}>Increment</button>
         </div>
