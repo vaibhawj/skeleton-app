@@ -1,15 +1,12 @@
 import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import Wrapper from '../index';
-import { allReducers } from '../index';
+import Parent, { allReducers } from '../index';
 
 const store = createStore(combineReducers({ ...allReducers }), applyMiddleware(thunk));
 
-storiesOf('Siblings', module)
+storiesOf('Stories', module)
   .addDecorator(story => <Provider store={store}>{story()}</Provider>)
-  .add('with redux', () => <Wrapper />);
+  .add('Parent', () => <Parent />);

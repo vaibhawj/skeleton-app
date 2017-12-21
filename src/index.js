@@ -1,14 +1,13 @@
-import Wrapper from './wrapper/wrapper.container';
-import wrapperReducer from './wrapper/wrapper.reducer';
-import child1Reducer from './child1/child1.reducer';
-import child2Reducer from './child2/child2.reducer';
-
-export default Wrapper;
+import { childReducer } from './child/child.reducer';
+import { parentReducer } from './parent/parent.reducer';
+import Parent from './parent/parent.container';
+import Child from './child/child.container';
 
 export const allReducers={
-    wrapperReducer,
-    child1Reducer,
-    child2Reducer
+    childReducer,
+    parentReducer
 }
 
-export {Parent} ;
+export {Child};
+
+export default Parent;
