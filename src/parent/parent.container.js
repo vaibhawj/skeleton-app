@@ -9,8 +9,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleClick: (value) => {
-            console.log(value);
+        handleClick: (childRef) => {
+            console.log(childRef.selector.props.value);
         }
     }
 }

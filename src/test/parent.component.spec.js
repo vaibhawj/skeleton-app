@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 chai.should();
 chai.use(SinonChai);
 
-import Parent, { Child, allReducers } from '../index.js';
+import {Parent, Child, allReducers } from '../index.js';
 
 const store = createStore(combineReducers(allReducers));
 
@@ -28,17 +28,17 @@ describe('parent', () => {
     })
 
     it('should invoke handleClick with child value', () => {
-        const handleClick = sinon.spy();
+        const handleClick = td.function();
         const wrapper = mount(<Provider store={store}><Parent handleClick={handleClick}/></Provider>);
 
-        wrapper.find(Child).instance().selector.props.handleChange('test')
+        const childRef = wrapper.find(Child).instance();
+        childRef.selector.props.handleChange('test')
 
-        expect(wrapper.find(Child).instance().selector.props.value).to.equal('test');
+        expect(childRef.selector.props.value).to.equal('test');
 
         const button = wrapper.find('#btn');
-        const spy = sinon.spy(wrapper.find(Parent).instance().selector.props.handleClick);
         button.simulate('click');
 
-        expect(handleClick).to.have.been.calledWith("test");
+        td.verify(handleClick(childRef))
     })
 })

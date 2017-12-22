@@ -11,7 +11,7 @@ class Parent extends React.Component {
                 <Child id="child" ref="childRef" />
                 <br />
                 <br />
-                <input id="btn" type="button" value="Check" onClick={e => this.props.handleClick(this.refs.childRef.selector.props.value)} />
+                <input id="btn" type="button" value="Check" onClick={e => this.props.handleClick(this.refs.childRef)} />
             </div>
         )
     }

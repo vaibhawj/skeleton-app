@@ -1,6 +1,7 @@
 import { childReducer } from './child/child.reducer';
 import { parentReducer } from './parent/parent.reducer';
-import Parent from './parent/parent.container';
+import ParentContainer from './parent/parent.container';
+import Parent from './parent/parent.component';
 import Child from './child/child.container';
 
 export const allReducers={
@@ -8,6 +9,6 @@ export const allReducers={
     parentReducer
 }
 
-export {Child};
+export {Child, Parent};
 
-export default Parent;
+export default ParentContainer;
