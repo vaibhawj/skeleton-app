@@ -4,12 +4,8 @@ import Enzyme from 'enzyme';
 import chai, { expect, should } from 'chai';
 import { shallow, mount } from 'enzyme';
 import td from 'testdouble';
-import sinon, { assert } from 'sinon';
-import SinonChai from 'sinon-chai';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-chai.should();
-chai.use(SinonChai);
 
 import {Parent, Child, allReducers } from '../index.js';
 
