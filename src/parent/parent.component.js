@@ -1,21 +1,16 @@
 import React from 'react';
-import Child from '../child/child.container';
+import Name from '../children/name.component';
+import Phone from '../children/phone.component';
 
-class Parent extends React.Component {
-
-    render() {
-        let childRef = null;
-        return (
-            <div>
-                Parent
+const Parent = ({profile, updateProfile}) => {
+    return (
+        <div>
+            <Name profile={profile} updateProfile={updateProfile}/>
             <br />
-                <Child id="child" ref={input => childRef = input} />
-                <br />
-                <br />
-                <input id="btn" type="button" value="Check" onClick={e => this.props.handleClick(childRef)} />
-            </div>
-        )
-    }
+            <br />
+            <Phone profile={profile} updateProfile={updateProfile}/>
+        </div>
+    )
 }
 
 export default Parent;

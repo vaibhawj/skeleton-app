@@ -1,14 +1,8 @@
-import { childReducer } from './child/child.reducer';
-import { parentReducer } from './parent/parent.reducer';
-import ParentContainer from './parent/parent.container';
-import Parent from './parent/parent.component';
-import Child from './child/child.container';
+import GrandParent from './grandparent/grandparent.container';
+import {grandparentReducer} from './grandparent/grandparent.reducer';
 
-export const allReducers={
-    childReducer,
-    parentReducer
+export default GrandParent;
+
+export const allReducers = {
+    grandparentReducer
 }
-
-export {Child, Parent};
-
-export default ParentContainer;
